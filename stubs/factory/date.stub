@@ -1,0 +1,1 @@
+'{{fieldname}}' => (new Carbon($faker->dateTimeBetween('this week', '+6 days')->format('Y-m-d')))->format('m/d/Y'),

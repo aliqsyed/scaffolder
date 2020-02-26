@@ -1,0 +1,10 @@
+ <div class="field">
+  <label class="label" for="{{name}}">{{friendlyname}}</label>
+  <div class="control">
+    <input name="{{name}}" id="{{name}}" type="text" value="{{ old('{{name}}', ${{modelvar}}->{{name}}) }}" placeholder=""{{required}} class="input @error('{{name}}') is-danger @enderror">
+  </div>
+  @error('{{name}}')
+    <p class="help is-danger">{{ $message }}</p>
+  @enderror
+</div>
+

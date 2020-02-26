@@ -1,0 +1,15 @@
+<?php
+
+/** @var \Illuminate\Database\Eloquent\Factory $factory */
+
+use App\{{modelname}};
+use Faker\Generator as Faker;
+use Carbon\Carbon;
+
+$factory->define({{modelname}}::class, function (Faker $faker) {
+    return [
+      {{factoryfields}}
+    ];
+});
+
+

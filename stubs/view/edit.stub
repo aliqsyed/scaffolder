@@ -1,0 +1,14 @@
+@extends('layouts.app')
+
+@section('content')
+<div class="container">
+    <form method="POST" action={{ route('{{modelvar}}.update', ${{modelvar}}) }}>
+        @csrf
+        @method('PUT')
+        <div class="row justify-content-center">
+            @include('{{modelvar}}._form')
+        </div>
+    </form>
+</div>
+
+@endsection

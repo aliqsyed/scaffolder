@@ -1,0 +1,12 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body><div class="field">
+  <label class="label" for="description">Description</label>
+  <div class="control">
+    <textarea name="description" id="description" placeholder="" required class="textarea @error('description') is-danger @enderror">
+      {{ old('description',$testuser-&gt;description) }}
+    </textarea>
+  </div>
+  @error('description')
+    <p class="help is-danger">{{ $message }}</p>
+  @enderror
+</div></body></html>

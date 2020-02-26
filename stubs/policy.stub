@@ -1,0 +1,94 @@
+<?php
+
+namespace App\Policies;
+
+use App\{{modelname}};
+use App\User;
+use Illuminate\Auth\Access\HandlesAuthorization;
+
+class {{modelname}}Policy
+{
+    use HandlesAuthorization;
+
+    /**
+     * Determine whether the user can view any {{modelvar}}s.
+     *
+     * @param  \App\User  $user
+     * @return mixed
+     */
+    public function viewAny(User $user)
+    {
+        return $user->application_role == 'APPADMIN';
+    }
+
+    /**
+     * Determine whether the user can view the {{modelvar}}.
+     *
+     * @param  \App\User  $user
+     * @param  \App\{{modelname}}  ${{modelvar}}
+     * @return mixed
+     */
+    public function view(User $user, {{modelname}} ${{modelvar}})
+    {
+        //
+    }
+
+    /**
+     * Determine whether the user can create {{modelvar}}s.
+     *
+     * @param  \App\User  $user
+     * @return mixed
+     */
+    public function create(User $user)
+    {
+        //
+    }
+
+    /**
+     * Determine whether the user can update the {{modelvar}}.
+     *
+     * @param  \App\User  $user
+     * @param  \App\{{modelname}}  ${{modelvar}}
+     * @return mixed
+     */
+    public function update(User $user, {{modelname}} ${{modelvar}})
+    {
+        return $user->application_role === 'APPADMIN';
+    }
+
+    /**
+     * Determine whether the user can delete the {{modelvar}}.
+     *
+     * @param  \App\User  $user
+     * @param  \App\{{modelname}}  ${{modelvar}}
+     * @return mixed
+     */
+    public function delete(User $user, {{modelname}} ${{modelvar}})
+    {
+        //
+    }
+
+    /**
+     * Determine whether the user can restore the {{modelvar}}.
+     *
+     * @param  \App\User  $user
+     * @param  \App\{{modelname}}  ${{modelvar}}
+     * @return mixed
+     */
+    public function restore(User $user, {{modelname}} ${{modelvar}})
+    {
+        //
+    }
+
+    /**
+     * Determine whether the user can permanently delete the {{modelvar}}.
+     *
+     * @param  \App\User  $user
+     * @param  \App\{{modelname}}  ${{modelvar}}
+     * @return mixed
+     */
+    public function forceDelete(User $user, {{modelname}} ${{modelvar}})
+    {
+        //
+    }
+}

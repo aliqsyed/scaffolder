@@ -1,0 +1,11 @@
+<div class="field">
+  <label class="label" for="{{name}}">{{friendlyname}}</label>
+  <div class="control">
+    <textarea name="{{name}}" id="{{name}}" placeholder=""{{required}} class="textarea @error('{{name}}') is-danger @enderror">
+      {{ old('{{name}}',${{modelvar}}->{{name}}) }}
+    </textarea>
+  </div>
+  @error('{{name}}')
+    <p class="help is-danger">{{ $message }}</p>
+  @enderror
+</div>

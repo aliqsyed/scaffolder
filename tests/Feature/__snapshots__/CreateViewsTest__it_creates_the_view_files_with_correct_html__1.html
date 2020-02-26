@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body>
+<div class="field">
+  <label class="label" for="id">Id</label>
+  <div class="control has-icons-left has-icons-right">
+    <input name="id" id="id" type="text" value="{{ old('id') ?? $testuser-&gt;id }}" placeholder="" required class="input @error('id') is-danger @enderror">
+  </div>
+  @error('id')
+    <p class="help is-danger">{{ $message }}</p>
+  @enderror
+</div>
+
+ <div class="field">
+  <label class="label" for="name">Name</label>
+  <div class="control has-icons-left has-icons-right">
+    <input name="name" id="name" type="text" value="{{ old('name') ?? $testuser-&gt;name }}" placeholder="" required class="input @error('name') is-danger @enderror">
+  </div>
+  @error('name')
+    <p class="help is-danger">{{ $message }}</p>
+  @enderror
+</div>
+
+ <div class="field">
+  <label class="label" for="my_date">My Date</label>
+  <div class="control has-icons-left has-icons-right">
+    <input name="my_date" id="my_date" type="text" value="{{ old('my_date') ?? $testuser-&gt;my_date }}" placeholder="" class="input @error('my_date') is-danger @enderror">
+  </div>
+  @error('my_date')
+    <p class="help is-danger">{{ $message }}</p>
+  @enderror
+</div>
+
+ <div class="field">
+  <label class="label" for="email">Email</label>
+  <div class="control has-icons-left has-icons-right">
+    <input name="email" id="email" type="text" value="{{ old('email') ?? $testuser-&gt;email }}" placeholder="" required class="input @error('email') is-danger @enderror">
+  </div>
+  @error('email')
+    <p class="help is-danger">{{ $message }}</p>
+  @enderror
+</div>
+
+ <div class="field">
+  <label class="label" for="email_verified_at">Email Verified At</label>
+  <div class="control has-icons-left has-icons-right">
+    <input name="email_verified_at" id="email_verified_at" type="text" value="{{ old('email_verified_at') ?? $testuser-&gt;email_verified_at }}" placeholder="" class="input @error('email_verified_at') is-danger @enderror">
+  </div>
+  @error('email_verified_at')
+    <p class="help is-danger">{{ $message }}</p>
+  @enderror
+</div>
+
+ <div class="field">
+  <label class="label" for="password">Password</label>
+  <div class="control has-icons-left has-icons-right">
+    <input name="password" id="password" type="text" value="{{ old('password') ?? $testuser-&gt;password }}" placeholder="" required class="input @error('password') is-danger @enderror">
+  </div>
+  @error('password')
+    <p class="help is-danger">{{ $message }}</p>
+  @enderror
+</div>
+
+<div class="field">
+  <div class="control">
+    <label class="checkbox">
+      <input type="checkbox" name="attending" id="attending" value="{{ old('attending') ?? $testuser-&gt;attending }}">attending) checked  @endif required&gt;
+      Attending
+    </label>
+  </div>
+</div>
+<div class="field">
+  <label class="label" for="description">Description</label>
+  <div class="control">
+    <textarea name="description" id="description" placeholder="" required class="textarea @error('description') is-danger @enderror">
+      {{ old('description') ?? $testuser-&gt;description }}
+    </textarea>
+  </div>
+  @error('description')
+    <p class="help is-danger">{{ $message }}</p>
+  @enderror
+</div> <div class="field">
+  <label class="label" for="votes">Votes</label>
+  <div class="control has-icons-left has-icons-right">
+    <input name="votes" id="votes" type="text" value="{{ old('votes') ?? $testuser-&gt;votes }}" placeholder="" required class="input @error('votes') is-danger @enderror">
+  </div>
+  @error('votes')
+    <p class="help is-danger">{{ $message }}</p>
+  @enderror
+</div>
+
+<div class="field">
+  <label class="label" for="plan_description">Plan Description</label>
+  <div class="control">
+    <textarea name="plan_description" id="plan_description" placeholder="" class="textarea @error('plan_description') is-danger @enderror">
+      {{ old('plan_description') ?? $testuser-&gt;plan_description }}
+    </textarea>
+  </div>
+  @error('plan_description')
+    <p class="help is-danger">{{ $message }}</p>
+  @enderror
+</div> <div class="field">
+  <label class="label" for="remember_token">Remember Token</label>
+  <div class="control has-icons-left has-icons-right">
+    <input name="remember_token" id="remember_token" type="text" value="{{ old('remember_token') ?? $testuser-&gt;remember_token }}" placeholder="" class="input @error('remember_token') is-danger @enderror">
+  </div>
+  @error('remember_token')
+    <p class="help is-danger">{{ $message }}</p>
+  @enderror
+</div>
+
+ <div class="field">
+  <label class="label" for="created_at">Created At</label>
+  <div class="control has-icons-left has-icons-right">
+    <input name="created_at" id="created_at" type="text" value="{{ old('created_at') ?? $testuser-&gt;created_at }}" placeholder="" class="input @error('created_at') is-danger @enderror">
+  </div>
+  @error('created_at')
+    <p class="help is-danger">{{ $message }}</p>
+  @enderror
+</div>
+
+ <div class="field">
+  <label class="label" for="updated_at">Updated At</label>
+  <div class="control has-icons-left has-icons-right">
+    <input name="updated_at" id="updated_at" type="text" value="{{ old('updated_at') ?? $testuser-&gt;updated_at }}" placeholder="" class="input @error('updated_at') is-danger @enderror">
+  </div>
+  @error('updated_at')
+    <p class="help is-danger">{{ $message }}</p>
+  @enderror
+</div>
+
+</body></html>

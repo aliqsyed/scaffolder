@@ -1,0 +1,13 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body>
+<div class="field">
+  <label class="label" for="full_name">Full Name</label>
+  <div class="control">
+    <input name="full_name" id="full_name" type="text" value="{{ old('full_name', $testuser-&gt;full_name) }}" placeholder="" required class="input @error('full_name') is-danger @enderror">
+  </div>
+  @error('full_name')
+    <p class="help is-danger">{{ $message }}</p>
+  @enderror
+</div>
+
+</body></html>

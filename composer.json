@@ -1,0 +1,45 @@
+{
+    "name": "aliqsyed/scaffolder",
+    "description": "An attempt to create scaffolding for Laravel models",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ali Syed",
+            "email": "aliqsyed@gmail.com",
+            "homepage": "https://github.com/aliqsyed"
+        }
+    ],
+    "homepage": "https://github.com/aliqsyed/scaffolder",
+    "keywords": [
+        "Laravel",
+        "Scaffolder"
+    ],
+    "require": {
+        "doctrine/dbal": "^2.10"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.0",
+        "mockery/mockery": "^1.1",
+        "orchestra/testbench": "~3|~4",
+        "sempro/phpunit-pretty-print": "^1.0",
+        "spatie/phpunit-watcher": "^1.22",
+        "spatie/phpunit-snapshot-assertions": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Aliqsyed\\Scaffolder\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Aliqsyed\\Scaffolder\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Aliqsyed\\Scaffolder\\ScaffolderServiceProvider"
+            ]
+        }
+    }
+}

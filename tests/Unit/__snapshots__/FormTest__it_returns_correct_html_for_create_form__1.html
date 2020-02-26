@@ -1,0 +1,16 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body>
+<p>@extends('layouts.app')
+
+@section('content')
+</p>
+<div class="container">
+    <form method="POST" action="%7B%7B%20route('testuser.store')%20%7D%7D">
+        @csrf
+        <div class="row justify-content-center">
+            @include('testuser._form')
+        </div>
+    </form>
+</div>
+
+@endsection</body></html>

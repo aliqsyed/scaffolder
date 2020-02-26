@@ -1,0 +1,131 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\{{modelname}};
+use App\Http\Requests\{{modelname}}Request;
+
+class {{modelname}}Controller extends Controller
+{
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware(['auth']);
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        $user = auth()->user();
+
+        ${{modelvar}}s = $user->can('viewAny', 'App\{{modelname}}') ?
+            {{modelname}}::with('user')->latest()->get() :
+            {{modelname}}::with('user')->where('user_id', $user->id)->latest()->get();
+
+        return view('{{modelvar}}.index', compact('{{modelvar}}s'));
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        ${{modelvar}} = new {{modelname}}();
+
+        return view(
+            '{{modelvar}}.create',
+            [
+                '{{modelvar}}' => ${{modelvar}},
+            ]
+        );
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store({{modelname}}Request $request)
+    {
+        $validated = $request->validated();
+        ${{modelvar}} = $request->user()->{{modelvar}}s()->create($validated);
+
+        return redirect(route('{{modelvar}}.index'))->with(
+            'status',
+            'Your {{modelvar}} request was submitted successfully.'
+        );
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\{{modelname}}  ${{modelvar}}
+     * @return \Illuminate\Http\Response
+     */
+    public function show({{modelname}} ${{modelvar}})
+    {
+        return view('{{modelvar}}.show', compact('{{modelvar}}'));
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\{{modelname}}  ${{modelvar}}
+     * @return \Illuminate\Http\Response
+     */
+    public function edit({{modelname}} ${{modelvar}})
+    {
+        $this->authorize('update', ${{modelvar}});
+
+        return view(
+            '{{modelvar}}.edit',
+            [
+                '{{modelvar}}' => ${{modelvar}},
+            ]
+        );
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\{{modelname}}  ${{modelvar}}
+     * @return \Illuminate\Http\Response
+     */
+    public function update({{modelname}}Request $request, {{modelname}} ${{modelvar}})
+    {
+        $validated = $request->validated();
+        ${{modelvar}}->update($validated);
+
+        return redirect(route('{{modelvar}}.index'))->with(
+            'status',
+            'The {{modelvar}} request was updated successfully.'
+        );
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\{{modelname}}  ${{modelvar}}
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy({{modelname}} ${{modelvar}})
+    {
+        $this->authorize('update', ${{modelvar}});
+
+        ${{modelvar}}->delete();
+
+        return redirect(route('{{modelvar}}.index'))->with('status', 'The {{modelvar}} request was deleted successfully.');
+    }
+}

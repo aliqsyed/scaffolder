@@ -1,0 +1,1 @@
+ <th scope="row">{{friendlyname}}</th><td>{{ ${{modelvar}}->{{name}} }}</td>

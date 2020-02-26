@@ -1,0 +1,39 @@
+<?php
+
+namespace App\Http\Requests;
+
+use Illuminate\Foundation\Http\FormRequest;
+
+//use Illuminate\Support\Facades\Route;
+//use Illuminate\Validation\Rule;
+
+class {{modelname}}Request extends FormRequest
+{
+    /**
+     * Determine if the user is authorized to make this request.
+     *
+     * @return bool
+     */
+    public function authorize()
+    {
+        // $current_route = Route::currentRouteName();
+
+        // if ($current_route == '{{modelvar}}.update') {
+        //     return $this->user()->can('update', $this->route('{{modelvar}}'));
+        // }
+
+        return false;
+    }
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array
+     */
+    public function rules()
+    {
+        return [
+           {{modelrules}}
+        ];
+    }
+}

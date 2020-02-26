@@ -1,0 +1,12 @@
+   /**
+     * Convert {{fieldname}} to mm/dd/yyyy format for display
+     *
+     */
+    public function {{methodname}}($value)
+    {
+        if (is_null($value)) {
+            $this->attributes['{{fieldname}}'] = null;
+        } else {
+            $this->attributes['{{fieldname}}'] = Carbon::createFromFormat('m/d/Y', $value)->format('Y-m-d');
+        }
+    }

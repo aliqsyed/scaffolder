@@ -1,0 +1,1 @@
+ <td>{{ ${{modelvar}}->{{name}} }}</td>
