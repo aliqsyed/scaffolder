@@ -49,12 +49,14 @@ class CreateControllerTest extends TestCase
             ->assertExitCode(0);
     }
 
-    /* @test * */
+    /** @test * */
     public function it_adds_the_route_for_the_controller()
     {
+        copy(base_path() . '/routes/web.php.backup', base_path() . '/routes/web.php');
         $this->artisan('scaffolder:controller testusers --force');
         $routes = file_get_contents(base_path() . '/routes/web.php');
         $this->assertStringContainsString("Route::resource('testuser', 'TestuserController');", $routes);
+        unlink(base_path() . '/routes/web.php');
     }
 
     /** @test * */

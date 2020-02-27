@@ -12,6 +12,7 @@ class FileWriterTest extends TestCase
 {
     use RefreshDatabase;
     use MatchesSnapshots;
+    public static $path = '';
 
     protected function getPackageProviders($app)
     {
@@ -20,14 +21,20 @@ class FileWriterTest extends TestCase
         ];
     }
 
+    public function setUp(): void
+    {
+        parent::setUp();
+        $this->app->setBasePath(realpath(__DIR__ . '/../../testfs'));
+        static::$path = base_path('routes');
+        copy(static::$path . '/web.php.backup', static::$path . '/web.php');
+    }
+
     /** @test **/
     public function it_does_not_append_to_file_if_the_text_already_exists()
     {
         $fw = new FileWriter;
         $content = "Route::resource('testuser', 'TestuserController');";
-        $this->app->setBasePath(realpath(__DIR__ . '/../../testfs'));
-        $path = base_path('routes');
-        $this->assertFalse($fw->appendToFile($path, 'web.php', $content));
+        $this->assertFalse($fw->appendToFile(static::$path, 'web.php', $content));
     }
 
     /** @test **/
@@ -35,9 +42,13 @@ class FileWriterTest extends TestCase
     {
         $fw = new FileWriter;
         $content = "\nRoute::resource('testuser'" . generateRandomString() . ", 'TestuserController');\n";
-        $this->app->setBasePath(realpath(__DIR__ . '/../../testfs'));
-        $path = base_path('routes');
-        $this->assertTrue($fw->appendToFile($path, 'web.php', $content));
+        $this->assertTrue($fw->appendToFile(static::$path, 'web.php', $content));
+    }
+
+    public function tearDown():void
+    {
+        parent::tearDown();
+        unlink(static::$path . '/web.php');
     }
 }
 
