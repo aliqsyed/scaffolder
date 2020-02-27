@@ -7,11 +7,13 @@
 
 This is where your description should go. Take a look at [contributing.md](contributing.md) to see a to do list.
 
+This will be updated soon.
+
 ## Installation
 
 Via Composer
 
-``` bash
+```bash
 $ composer require aliqsyed/scaffolder
 ```
 
@@ -23,7 +25,7 @@ Please see the [changelog](changelog.md) for more information on what has change
 
 ## Testing
 
-``` bash
+```bash
 $ composer test
 ```
 
@@ -48,7 +50,6 @@ MIT. Please see the [license file](license.md) for more information.
 [ico-downloads]: https://img.shields.io/packagist/dt/aliqsyed/scaffolder.svg?style=flat-square
 [ico-travis]: https://img.shields.io/travis/aliqsyed/scaffolder/master.svg?style=flat-square
 [ico-styleci]: https://styleci.io/repos/12345678/shield
-
 [link-packagist]: https://packagist.org/packages/aliqsyed/scaffolder
 [link-downloads]: https://packagist.org/packages/aliqsyed/scaffolder
 [link-travis]: https://travis-ci.org/aliqsyed/scaffolder
