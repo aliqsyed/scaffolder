@@ -4,6 +4,7 @@
 [![Latest Unstable Version](https://poser.pugx.org/aliqsyed/scaffolder/v/unstable)](https://packagist.org/packages/aliqsyed/scaffolder)
 [![Total Downloads](https://poser.pugx.org/aliqsyed/scaffolder/downloads)](https://packagist.org/packages/aliqsyed/scaffolder)
 [![License](https://poser.pugx.org/aliqsyed/scaffolder/license)](https://packagist.org/packages/aliqsyed/scaffolder)
+[![CircleCI](https://img.shields.io/circleci/build/gh/aliqsyed/scaffolder)](https://circleci.com/gh/aliqsyed/scaffolder)
 
 ## About Scaffolder
 
