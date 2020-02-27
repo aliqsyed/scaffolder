@@ -1,15 +1,19 @@
 # Scaffolder
 
-[![Latest Version on Packagist][ico-version]][link-packagist]
-[![Total Downloads][ico-downloads]][link-downloads]
-[![CircleCI](https://img.shields.io/circleci/build/gh/aliqsyed/scaffolder)](https://circleci.com/gh/aliqsyed/scaffolder)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Latest Stable Version](https://poser.pugx.org/aliqsyed/scaffolder/v/stable)](https://packagist.org/packages/aliqsyed/scaffolder)
+[![Latest Unstable Version](https://poser.pugx.org/aliqsyed/scaffolder/v/unstable)](https://packagist.org/packages/aliqsyed/scaffolder)
+[![Total Downloads](https://poser.pugx.org/aliqsyed/scaffolder/downloads)](https://packagist.org/packages/aliqsyed/scaffolder)
+[![License](https://poser.pugx.org/aliqsyed/scaffolder/license)](https://packagist.org/packages/aliqsyed/scaffolder)
 
 ## About Scaffolder
 
 This Laravel package scaffolds Controllers, Models, Factories, Policies, Requests and front end blade files for forms (both edit and delete), show and index views.
 
 _This package generates code. Please make sure you read the generated code and make any corrections necessary._
+
+## Compatiblity
+
+This package works with Laravel 6.0 and above.
 
 ## Installation
 
@@ -83,10 +87,6 @@ The publishes the stubs for scaffolder to `resources/vendor/aliqsyed/stubs` fold
 Once the stubs are published, you can edit them in any way you want. **Please do not delete any individual files in the stubs folder**.
 
 You can delete the `resources/vendor/aliqsyed/stubs` directory, and the package will go back to using the default stubs that come with the package.
-
-## Credits
-
-- [Ali Syed][link-author]
 
 ## License
 
