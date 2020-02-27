@@ -16,7 +16,3 @@ Route::get('/', function () {
 });
 
 Route::resource('testuser', 'TestuserController');
-
-Route::resource('testuser'S6dY4Rm3QW, 'TestuserController');
-
-Route::resource('testuser'1dRKlvx3Tt, 'TestuserController');

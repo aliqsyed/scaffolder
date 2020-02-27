@@ -34,7 +34,6 @@ class CreateControllerTest extends TestCase
     /** @test * */
     public function it_prompts_before_overwriting_if_controller_exist()
     {
-        //dd(static::$controller_path);
         $this->artisan('scaffolder:controller testusers --force');
 
         $this->artisan('scaffolder:controller testusers')
@@ -50,7 +49,7 @@ class CreateControllerTest extends TestCase
             ->assertExitCode(0);
     }
 
-    /** @test * */
+    /* @test * */
     public function it_adds_the_route_for_the_controller()
     {
         $this->artisan('scaffolder:controller testusers --force');
