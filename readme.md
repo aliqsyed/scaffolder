@@ -34,7 +34,7 @@ php artisan scaffolder:<scaffold-type> [tablename] [--force] [--nostubs]
 
 You need to create and run a migration for a table. This is a mandatory step since the scoffolds for items listed above are based on the table structure.
 
-Let's say you have created a table called `posts`. You can create scaffolds various scaffolds as follows:
+Let's say you have created a table called `posts`. You can create various classes/files as follows:
 
 ```bash
 $ php artisan scaffolder:controller posts
