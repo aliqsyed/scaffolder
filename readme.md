@@ -1,9 +1,7 @@
 # Scaffolder
 
-[![Latest Stable Version](https://poser.pugx.org/aliqsyed/scaffolder/v/stable)](https://packagist.org/packages/aliqsyed/scaffolder)
-[![Latest Unstable Version](https://poser.pugx.org/aliqsyed/scaffolder/v/unstable)](https://packagist.org/packages/aliqsyed/scaffolder)
-[![Total Downloads](https://poser.pugx.org/aliqsyed/scaffolder/downloads)](https://packagist.org/packages/aliqsyed/scaffolder)
-[![License](https://poser.pugx.org/aliqsyed/scaffolder/license)](https://packagist.org/packages/aliqsyed/scaffolder)
+[![Packagist Version](https://img.shields.io/packagist/v/aliqsyed/scaffolder)](https://packagist.org/packages/aliqsyed/scaffolder)
+![GitHub](https://img.shields.io/github/license/aliqsyed/scaffolder)
 [![CircleCI](https://img.shields.io/circleci/build/gh/aliqsyed/scaffolder)](https://circleci.com/gh/aliqsyed/scaffolder)
 
 ## About Scaffolder
@@ -91,4 +89,4 @@ You can delete the `resources/vendor/aliqsyed/stubs` directory, and the package 
 
 ## License
 
-MIT. Please see the [license file](license.md) for more information.
+MIT. Please see the [license file](LICENSE) for more information.
