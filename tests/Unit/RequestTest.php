@@ -94,6 +94,11 @@ class RequestTest extends TestCase
             'name' => 'email',
             'type' => 'string',
             'required' => false,
+        ],
+        'company_url' => [
+            'name' => 'ecompany_url',
+            'type' => 'string',
+            'required' => false,
         ]
     ];
 

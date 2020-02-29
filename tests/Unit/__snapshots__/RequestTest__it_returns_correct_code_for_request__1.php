@@ -49,6 +49,7 @@ class CredentialRequest extends FormRequest
 \'phone\' => \'nullable\',
 \'user_test_id\' => \'nullable|numeric\',
 \'email\' => \'nullable|email\',
+\'company_url\' => \'nullable|url\',
 
         ];
     }

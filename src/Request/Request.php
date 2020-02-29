@@ -53,6 +53,7 @@ class Request
             $rules .= $attributes['required'] ? 'required' : 'nullable';
             if ($attributes['type'] === 'string') {
                 $rules .= strpos($attributes['name'], 'email') !== false ? '|email' : '';
+                $rules .= strpos($attributes['name'], 'url') !== false ? '|url' : '';
             }
             $rules .= strpos($attributes['type'], 'date') !== false ? '|date' : '';
             $rules .= $attributes['type'] === 'integer' ? '|numeric' : '';

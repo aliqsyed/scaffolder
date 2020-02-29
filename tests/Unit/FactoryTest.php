@@ -76,7 +76,11 @@ class FactoryTest extends TestCase
         'email' => [
             'name' => 'email',
             'type' => 'string',
-        ]
+        ],
+        'company_url' => [
+            'name' => 'company_url',
+            'type' => 'string',
+        ],
     ];
 
     protected function getPackageProviders($app)
@@ -132,6 +136,7 @@ class FactoryTest extends TestCase
         $this->assertSame('fax', $factory->normalizeType('string', 'fax'));
         $this->assertSame('date', $factory->normalizeType('date', 'birthdate'));
         $this->assertSame('email', $factory->normalizeType('string', 'student_email'));
+        $this->assertSame('url', $factory->normalizeType('string', 'company_url'));
     }
 
     /** @test **/

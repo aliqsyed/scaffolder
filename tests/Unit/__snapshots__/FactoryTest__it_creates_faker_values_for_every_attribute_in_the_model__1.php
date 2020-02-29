@@ -17,4 +17,5 @@
   return (factory(App\\UserTest::class)->create())->id;
 },
 \'email\' => $faker->unique()->safeEmail,
+\'company_url\' => $faker->url,
 ';

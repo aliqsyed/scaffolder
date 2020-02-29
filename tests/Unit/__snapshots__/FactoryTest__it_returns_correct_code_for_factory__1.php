@@ -27,6 +27,7 @@ $factory->define(Credential::class, function (Faker $faker) {
   return (factory(App\\UserTest::class)->create())->id;
 },
 \'email\' => $faker->unique()->safeEmail,
+\'company_url\' => $faker->url,
 
     ];
 });

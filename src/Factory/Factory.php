@@ -12,7 +12,7 @@ class Factory
      * Special types which have seperate stubs for them. If these appear in a field's name
      * their value comes from a stub that named accordingly.
      */
-    const SPECIAL_TYPES = ['first_name', 'last_name', 'address', 'city', 'state', 'zip', 'phone', 'fax', 'email'];
+    const SPECIAL_TYPES = ['first_name', 'last_name', 'address', 'city', 'state', 'zip', 'phone', 'fax', 'email', 'url'];
 
     protected $table;
 
