@@ -40,9 +40,12 @@ class FormFields
 
     public function getFormField($column)
     {
+        $required = $column['required'] ? ' required' : '';
+        $askterisk = $column['required'] ? ' required' : '';
+
         return str_replace(
-            ['{{name}}', '{{required}}', '{{friendlyname}}', '{{modelvar}}'],
-            [$column['name'], $column['required'] ? ' required' : '', $column['friendlyname'], $this->table->getModelVariableName()],
+            ['{{name}}', '{{required}}', '{{friendlyname}}', '{{modelvar}}', '{{asterisk}}'],
+            [$column['name'], $required, $column['friendlyname'], $this->table->getModelVariableName(), $askterisk],
             file_get_contents($this->getStubsPath($this->nostubs) . '/view/' . $column['htmlinputtype'] . '.stub')
         );
     }

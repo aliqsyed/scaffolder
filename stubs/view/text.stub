@@ -1,5 +1,5 @@
  <div class="field">
-  <label class="label" for="{{name}}">{{friendlyname}}</label>
+  <label class="label" for="{{name}}">{{friendlyname}}{{asterisk}}</label>
   <div class="control">
     <input name="{{name}}" id="{{name}}" type="text" value="{{ old('{{name}}', ${{modelvar}}->{{name}}) }}" placeholder=""{{required}} class="input @error('{{name}}') is-danger @enderror">
   </div>

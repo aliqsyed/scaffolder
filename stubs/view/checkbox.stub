@@ -2,7 +2,7 @@
   <div class="control">
     <label class="checkbox">
       <input type="checkbox" name="{{name}}" id="{{name}}" value="{{ old('{{name}}', ${{modelvar}}->{{name}}) }}" @if(${{modelvar}}->{{name}}) checked  @endif{{required}}>
-      {{friendlyname}}
+      {{friendlyname}}{{asterisk}}
     </label>
   </div>
 </div>
