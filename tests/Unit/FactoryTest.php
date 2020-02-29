@@ -73,6 +73,18 @@ class FactoryTest extends TestCase
             'name' => 'user_test_id',
             'type' => 'integer',
         ],
+        'user_bigint' => [
+            'name' => 'user_test_id',
+            'type' => 'bigint',
+        ],
+        'user_smallint' => [
+            'name' => 'user_test_id',
+            'type' => 'smallint',
+        ],
+        'user_tinyint' => [
+            'name' => 'user_test_id',
+            'type' => 'tinyint',
+        ],
         'email' => [
             'name' => 'email',
             'type' => 'string',

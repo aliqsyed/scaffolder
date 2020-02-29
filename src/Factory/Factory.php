@@ -62,7 +62,7 @@ class Factory
                 $fields .= $this->getField('string', $column_name);
             } elseif (in_array($attributes['type'], ['text'])) {
                 $fields .= $this->getField('text', $column_name);
-            } elseif (in_array($attributes['type'], ['integer'])) {
+            } elseif (in_array($attributes['type'], ['integer', 'bigint', 'smallint', 'mediumint', 'tinyint'])) {
                 $fields .= $this->getField('integer', $column_name);
             } elseif (in_array($attributes['type'], ['boolean'])) {
                 $fields .= $this->getField('boolean', $column_name);
