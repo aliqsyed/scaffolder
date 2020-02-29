@@ -51,7 +51,7 @@
 <div class="field">
   <div class="control">
     <label class="checkbox">
-      <input type="checkbox" name="attending" id="attending" value="{{ old(\'attending\', $testuser->attending) }}" @if($testuser->attending) checked  @endif required>
+      <input type="checkbox" name="attending" id="attending" value=1  @if( old(\'attending\', $testuser->attending) ) checked  @endif required>
       Attending*
     </label>
   </div>
