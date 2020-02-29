@@ -35,13 +35,17 @@ class FormFields
             $fields .= $this->getFormField($column);
         }
 
-        return $fields;
+        return str_replace(
+            ['{{formfields}}'],
+            [$fields],
+            file_get_contents($this->getStubsPath($this->nostubs) . '/view/_form.stub')
+        );
     }
 
     public function getFormField($column)
     {
         $required = $column['required'] ? ' required' : '';
-        $askterisk = $column['required'] ? ' required' : '';
+        $askterisk = $column['required'] ? '*' : '';
 
         return str_replace(
             ['{{name}}', '{{required}}', '{{friendlyname}}', '{{modelvar}}', '{{asterisk}}'],

@@ -1,5 +1,5 @@
 <?php return ' <div class="field">
-  <label class="label" for="name">Name</label>
+  <label class="label" for="name">Name*</label>
   <div class="control">
     <input name="name" id="name" type="text" value="{{ old(\'name\', $testuser->name) }}" placeholder="" required class="input @error(\'name\') is-danger @enderror">
   </div>
@@ -19,7 +19,7 @@
 </div>
 
  <div class="field">
-  <label class="label" for="email">Email</label>
+  <label class="label" for="email">Email*</label>
   <div class="control">
     <input name="email" id="email" type="text" value="{{ old(\'email\', $testuser->email) }}" placeholder="" required class="input @error(\'email\') is-danger @enderror">
   </div>
@@ -39,7 +39,7 @@
 </div>
 
  <div class="field">
-  <label class="label" for="password">Password</label>
+  <label class="label" for="password">Password*</label>
   <div class="control">
     <input name="password" id="password" type="text" value="{{ old(\'password\', $testuser->password) }}" placeholder="" required class="input @error(\'password\') is-danger @enderror">
   </div>
@@ -52,11 +52,11 @@
   <div class="control">
     <label class="checkbox">
       <input type="checkbox" name="attending" id="attending" value="{{ old(\'attending\', $testuser->attending) }}" @if($testuser->attending) checked  @endif required>
-      Attending
+      Attending*
     </label>
   </div>
 </div><div class="field">
-  <label class="label" for="description">Description</label>
+  <label class="label" for="description">Description*</label>
   <div class="control">
     <textarea name="description" id="description" placeholder="" required class="textarea @error(\'description\') is-danger @enderror">
       {{ old(\'description\',$testuser->description) }}
@@ -66,7 +66,7 @@
     <p class="help is-danger">{{ $message }}</p>
   @enderror
 </div> <div class="field">
-  <label class="label" for="votes">Votes</label>
+  <label class="label" for="votes">Votes*</label>
   <div class="control">
     <input name="votes" id="votes" type="text" value="{{ old(\'votes\', $testuser->votes) }}" placeholder="" required class="input @error(\'votes\') is-danger @enderror">
   </div>
@@ -95,4 +95,9 @@
   @enderror
 </div>
 
-';
+
+<div class="field">
+  <div class="control">
+    <button class="button is-link">Submit</button>
+  </div>
+</div>';
