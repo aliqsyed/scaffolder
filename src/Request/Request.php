@@ -55,8 +55,11 @@ class Request
                 $rules .= strpos($attributes['name'], 'email') !== false ? '|email' : '';
                 $rules .= strpos($attributes['name'], 'url') !== false ? '|url' : '';
             }
+
+            if (in_array($attributes['type'], ['integer', 'bigint', 'smallint', 'tinyint', 'mediumint'])) {
+                $rules .= '|numeric';
+            }
             $rules .= strpos($attributes['type'], 'date') !== false ? '|date' : '';
-            $rules .= $attributes['type'] === 'integer' ? '|numeric' : '';
             $rules .= $attributes['type'] === 'boolean' ? '|boolean' : '';
             $rules .= "',\n";
         }

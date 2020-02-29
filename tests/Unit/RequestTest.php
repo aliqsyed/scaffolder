@@ -90,6 +90,21 @@ class RequestTest extends TestCase
             'type' => 'integer',
             'required' => false,
         ],
+        'user_bigint' => [
+            'name' => 'user_test_id',
+            'type' => 'bigint',
+            'required' => false,
+        ],
+        'user_smallint' => [
+            'name' => 'user_test_id',
+            'type' => 'smallint',
+            'required' => false,
+        ],
+        'user_tinyint' => [
+            'name' => 'user_test_id',
+            'type' => 'tinyint',
+            'required' => false,
+        ],
         'email' => [
             'name' => 'email',
             'type' => 'string',
