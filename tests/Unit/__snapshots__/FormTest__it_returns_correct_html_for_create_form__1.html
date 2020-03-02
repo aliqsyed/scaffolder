@@ -5,6 +5,7 @@
 @section('content')
 </p>
 <div class="container">
+    @include('shared._errors')
     <form method="POST" action="%7B%7B%20route('testuser.store')%20%7D%7D">
         @csrf
         <div class="row justify-content-center">

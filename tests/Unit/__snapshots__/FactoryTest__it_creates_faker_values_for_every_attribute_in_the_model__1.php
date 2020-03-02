@@ -19,6 +19,7 @@
 \'user_bigint\' => $faker->randomDigit,
 \'user_smallint\' => $faker->randomDigit,
 \'user_tinyint\' => $faker->randomDigit,
+\'user_mediumint\' => $faker->randomDigit,
 \'email\' => $faker->unique()->safeEmail,
 \'company_url\' => $faker->url,
 ';

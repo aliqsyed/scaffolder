@@ -100,6 +100,11 @@ class RequestTest extends TestCase
             'type' => 'smallint',
             'required' => false,
         ],
+        'user_mediumint' => [
+            'name' => 'user_test_id',
+            'type' => 'mediumint',
+            'required' => false,
+        ],
         'user_tinyint' => [
             'name' => 'user_test_id',
             'type' => 'tinyint',

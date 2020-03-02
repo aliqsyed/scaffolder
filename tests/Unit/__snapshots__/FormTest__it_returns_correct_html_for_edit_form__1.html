@@ -5,6 +5,7 @@
 @section('content')
 </p>
 <div class="container">
+    @include('shared._errors')
     <form method="POST" action="%7B%7B" route>
         @csrf
         @method('PUT')

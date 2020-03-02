@@ -50,6 +50,7 @@ class CredentialRequest extends FormRequest
 \'user_test_id\' => \'nullable|numeric\',
 \'user_bigint\' => \'nullable|numeric\',
 \'user_smallint\' => \'nullable|numeric\',
+\'user_mediumint\' => \'nullable|numeric\',
 \'user_tinyint\' => \'nullable|numeric\',
 \'email\' => \'nullable|email\',
 \'company_url\' => \'nullable|url\',
