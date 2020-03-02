@@ -153,7 +153,7 @@ class IndexTest extends TestCase
     public function it_returns_correct_code_for_body_in_index()
     {
         $table = $this->mock(Table::class, function ($mock) {
-            $mock->shouldReceive('getModelVariableName')->once()->andReturn('credential');
+            $mock->shouldReceive('getModelVariableName')->twice()->andReturn('credential');
             $mock->shouldReceive('getColumnsWithMetadata')->once()->andReturn(static::COLUMNS);
         });
 
@@ -192,7 +192,7 @@ class IndexTest extends TestCase
     public function it_returns_correct_code_for_table_in_index()
     {
         $table = $this->mock(Table::class, function ($mock) {
-            $mock->shouldReceive('getModelVariableName')->once()->andReturn('credential');
+            $mock->shouldReceive('getModelVariableName')->twice()->andReturn('credential');
             $mock->shouldReceive('getColumnsWithMetadata')->twice()->andReturn(static::COLUMNS);
         });
 

@@ -1,4 +1,5 @@
 <?php return '<tbody>
+@foreach($credentials as $credential )
   <tr>
    <td>{{ $credential->are_you_coming }}</td>
  <td>{{ $credential->number_of_items }}</td>
@@ -18,4 +19,5 @@
  <td>{{ $credential->email }}</td>
 
 </tr>
+@endforeach  
 </tbody>';

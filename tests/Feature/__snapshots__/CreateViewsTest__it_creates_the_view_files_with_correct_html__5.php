@@ -9,6 +9,7 @@
 </tr>
 </thead>
 <tbody>
+@foreach($testusers as $testuser )
   <tr>
    <td>{{ $testuser->name }}</td>
  <td>{{ $testuser->my_date }}</td>
@@ -22,6 +23,7 @@
  <td>{{ $testuser->remember_token }}</td>
 
 </tr>
+@endforeach  
 </tbody>
 </table>
 </div>

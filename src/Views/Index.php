@@ -63,8 +63,8 @@ class Index
     public function getBody()
     {
         return str_replace(
-            '{{bodyfields}}',
-            $this->getBodyFields(),
+            ['{{bodyfields}}', '{{modelvar}}'],
+            [$this->getBodyFields(), $this->table->getModelVariableName()],
             file_get_contents($this->getStubsPath($this->nostubs) . '/view/' . 'indexbody.stub')
         );
     }

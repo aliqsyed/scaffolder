@@ -1,3 +1,5 @@
 <tbody>
+@foreach(${{modelvar}}s as ${{modelvar}} )
   {{bodyfields}}
+@endforeach  
 </tbody>
