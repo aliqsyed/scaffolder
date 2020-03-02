@@ -1,0 +1,13 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body>
+<p>@if ($errors-&gt;any())
+</p>
+<div class="alert alert-danger">
+  <strong>The following errors occurred while trying to submit your information</strong>
+  <ul>
+    @foreach ($errors-&gt;all() as $error)
+    <li>{{ $error }}</li>
+    @endforeach
+  </ul>
+</div>
+@endif</body></html>

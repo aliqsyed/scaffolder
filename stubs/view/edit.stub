@@ -2,6 +2,7 @@
 
 @section('content')
 <div class="container">
+    @include('shared._errors')
     <form method="POST" action={{ route('{{modelvar}}.update', ${{modelvar}}) }}>
         @csrf
         @method('PUT')

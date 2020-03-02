@@ -1,4 +1,4 @@
-<?php return '@if ($errors->any())
+@if ($errors->any())
 <div class="alert alert-danger">
   <strong>The following errors occurred while trying to submit your information</strong>
   <ul>
@@ -7,4 +7,4 @@
     @endforeach
   </ul>
 </div>
-@endif';
+@endif

@@ -13,6 +13,7 @@ class CreateViewsTest extends TestCase
     use MatchesSnapshots;
 
     protected static $resource_path;
+    protected static $errors_path;
 
     protected function getPackageProviders($app)
     {
@@ -27,8 +28,14 @@ class CreateViewsTest extends TestCase
         $this->app->setBasePath(realpath(__DIR__ . '/../../testfs'));
 
         static::$resource_path = resource_path('views/testuser');
+        static::$errors_path = resource_path('views/shared');
+
         if (is_dir(static::$resource_path)) {
             exec('rm -rf ' . static::$resource_path);
+        }
+
+        if (is_dir(static::$errors_path)) {
+            exec('rm -rf ' . static::$errors_path);
         }
     }
 
@@ -41,6 +48,7 @@ class CreateViewsTest extends TestCase
       ->expectsQuestion('_form.blade.php already exists in ' . static::$resource_path . '. Do you want to overwrite it?', 'yes')
       ->expectsQuestion('create.blade.php already exists in ' . static::$resource_path . '. Do you want to overwrite it?', 'yes')
       ->expectsQuestion('edit.blade.php already exists in ' . static::$resource_path . '. Do you want to overwrite it?', 'yes')
+      ->expectsQuestion('_errors.blade.php already exists in ' . static::$errors_path . '. Do you want to overwrite it?', 'yes')
       ->expectsQuestion('index.blade.php already exists in ' . static::$resource_path . '. Do you want to overwrite it?', 'yes')
       ->expectsQuestion('show.blade.php already exists in ' . static::$resource_path . '. Do you want to overwrite it?', 'yes')
       ->assertExitCode(0);
@@ -53,6 +61,7 @@ class CreateViewsTest extends TestCase
       ->expectsOutput(static::$resource_path . '/_form.blade.php')
       ->expectsOutput(static::$resource_path . '/create.blade.php')
       ->expectsOutput(static::$resource_path . '/edit.blade.php')
+      ->expectsOutput(static::$errors_path . '/_errors.blade.php')
       ->expectsOutput(static::$resource_path . '/index.blade.php')
       ->expectsOutput(static::$resource_path . '/show.blade.php')
       ->assertExitCode(0);
@@ -65,6 +74,7 @@ class CreateViewsTest extends TestCase
         $this->assertMatchesSnapshot(file_get_contents(static::$resource_path . '/_form.blade.php'));
         $this->assertMatchesSnapshot(file_get_contents(static::$resource_path . '/create.blade.php'));
         $this->assertMatchesSnapshot(file_get_contents(static::$resource_path . '/edit.blade.php'));
+        $this->assertMatchesSnapshot(file_get_contents(static::$errors_path . '/_errors.blade.php'));
         $this->assertMatchesSnapshot(file_get_contents(static::$resource_path . '/index.blade.php'));
         $this->assertMatchesSnapshot(file_get_contents(static::$resource_path . '/show.blade.php'));
     }

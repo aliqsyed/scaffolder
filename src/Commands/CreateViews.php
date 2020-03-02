@@ -7,6 +7,7 @@ use Aliqsyed\Scaffolder\StubsPath;
 use Aliqsyed\Scaffolder\Views\Form;
 use Aliqsyed\Scaffolder\Views\Show;
 use Aliqsyed\Scaffolder\Views\Index;
+use Aliqsyed\Scaffolder\Views\FormErrors;
 use Aliqsyed\Scaffolder\Views\FormFields;
 use Aliqsyed\Scaffolder\MissingTableException;
 
@@ -43,9 +44,12 @@ class CreateViews extends Scaffold
         $this->tablename = $this->argument('table');
 
         $dir = resource_path('views/' . Table::modelVariableName($this->tablename));
+        $errors_dir = resource_path('views/shared');
+
         try {
             $this->createFormPartial($dir);
             $this->createForm($dir);
+            $this->createErrorDisplay($errors_dir);
             $this->createIndex($dir);
             $this->createShow($dir);
             $this->printFilesCreated();
@@ -70,6 +74,12 @@ class CreateViews extends Scaffold
 
         $form = Form::create($this->tablename, 'edit', $this->option('nostubs'));
         $this->writeToFile($dir, 'edit.blade.php', $form->getForm());
+    }
+
+    protected function createErrorDisplay($dir)
+    {
+        $errors = FormErrors::create($this->option('nostubs'));
+        $this->writeToFile($dir, '_errors.blade.php', $errors->getErrorDisplay());
     }
 
     protected function createIndex($dir)
